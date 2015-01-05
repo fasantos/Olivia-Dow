@@ -3,7 +3,7 @@
 
 <p>
   <% for image in @staff.images %>
-   <%= image_tag("/images/code_image/#{image.id}", :alt => "Image") %><br/>
+   <%= render "/images/image", :locals => { :id => image.id }  %><br/>
    <% end %>
 </p>
 
