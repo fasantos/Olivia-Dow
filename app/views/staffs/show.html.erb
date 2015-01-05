@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <% for image in @staff.images %>
+   <%= image_tag("/images/code_image/#{image.id}", :alt => "Image") %><br/>
+   <% end %>
+</p>
+
+<p>
+   <%= @staff.name %> 
+   <% for paragraf in @staff.paragrafs %>
+   <%=h paragraf.body %><br/>
+   <% end %>
+</p>
+
+<%= link_to 'Edit', edit_staff_path(@staff) %> |
+<%= link_to 'Back', staffs_path %>

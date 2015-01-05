@@ -1,0 +1,6 @@
+<%= div_for comment do %>
+    <p>
+      <strong>Posted <%= comment.created_at  %> ago</strong><br />
+      <%= h(comment.body) %>
+    </p>
+<% end %>

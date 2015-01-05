@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @paragraf.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @paragraf.body %>
+</p>
+
+<p>
+  <strong>Staff:</strong>
+  <%= @paragraf.staff_id %>
+</p>
+
+<p>
+  <strong>Article:</strong>
+  <%= @paragraf.article_id %>
+</p>
+
+<p>
+  <strong>Act:</strong>
+  <%= @paragraf.act_id %>
+</p>
+
+<%= link_to 'Edit', edit_paragraf_path(@paragraf) %> |
+<%= link_to 'Back', paragrafs_path %>

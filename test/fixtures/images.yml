@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  adress: MyString
+  data: 
+  staff_id: 1
+  article_id: 1
+  album_id: 1
+
+two:
+  adress: MyString
+  data: 
+  staff_id: 1
+  article_id: 1
+  album_id: 1
