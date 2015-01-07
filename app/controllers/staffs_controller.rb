@@ -21,6 +21,7 @@ class StaffsController < ApplicationController
 
   # GET /staffs/1/edit
   def edit
+    @staff.paragrafs.build
   end
 
   # POST /staffs
@@ -72,6 +73,6 @@ class StaffsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def staff_params
-      params.require(:staff).permit(:name, images_attributes: [:image_file], paragrafs_attributes: [:id, :body])
+      params.require(:staff).permit(:name, images_attributes: [:id, :image_file, :_destroy], paragrafs_attributes: [:id, :body, :_destroy])
     end
 end

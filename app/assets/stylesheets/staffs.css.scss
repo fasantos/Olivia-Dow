@@ -1,3 +1,43 @@
 // Place all the styles related to the staffs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin: 0;
+	padding: 0;
+} 
+
+#admintabel{
+	margin: 20px;
+	text-align: justify;
+	font-family: "Times New Roman", serif;
+}
+
+td{
+	padding: 10px;
+}
+
+table#admintabel tr:nth-child(2n+1) td{
+	background:rgba(157, 193, 236,.4);
+	border: 1px solid  rgb(46, 108, 186);;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+table#admintabel tr:nth-child(2n+1) img{
+	width: 154px;
+	height: 184px;
+	border: none;
+	border-radius: 5px;
+}
+
+table#admintabel tr:nth-child(2n) img{
+	width: 154px;
+	height: 184px;
+	border: 1px solid  rgb(46, 108, 186);
+	border-radius: 5px;
+}
+

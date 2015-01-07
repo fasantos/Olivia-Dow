@@ -1,18 +1,33 @@
-<p id="notice"><%= notice %></p>
 
+<div id="content">
+  <p id="notice"><%= notice %></p>
+  <table id="admintabel">
 
-<p>
-  <% for image in @staff.images %>
-   <%= render "/images/image", :locals => { :id => image.id }  %><br/>
-   <% end %>
-</p>
+      <tr>
+          <td class="ce">
+              <% for image in @staff.images %>
+                <%= render "/images/image", :locals => { :id => image.id }  %><br/>
+              <% end %>
+          </td>
+          <td class="cd">
+            <p>
+              <b><%= @staff.name %></b>, 
+              <% for paragraf in @staff.paragrafs %>
+              <%=h paragraf.body %><br/>
+              <% end %>
+            </p><br>
+          </td>
+        </tr>
+        <tr>
+          <td class="ce">
+            <%= link_to 'Edit', edit_staff_path(@staff) %> |
+            <%= link_to 'Back', staffs_path %>
+          </td>
+          <td class="cd">
+          </td>
+        </tr>
+ 
+  </table>
 
-<p>
-   <%= @staff.name %> 
-   <% for paragraf in @staff.paragrafs %>
-   <%=h paragraf.body %><br/>
-   <% end %>
-</p>
-
-<%= link_to 'Edit', edit_staff_path(@staff) %> |
-<%= link_to 'Back', staffs_path %>
+  
+</div>
