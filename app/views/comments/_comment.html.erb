@@ -1,6 +1,13 @@
-<%= div_for comment do %>
-    <p>
-      <strong>Posted <%= comment.created_at  %> ago</strong><br />
-      <%= h(comment.body) %>
-    </p>
-<% end %>
+<section id="comments">
+  <header>
+    <h3>Comments</h3>
+  </header>
+  <%= div_for comment do %>
+    <header>
+      <p class="sig">
+        <a href="#"><%= comment.author  %>  on <%= comment.created_at  %></a>
+      </p>
+    </header>
+    <p><%= h(comment.body) %></p>
+  <% end %>
+</section>

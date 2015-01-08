@@ -5,7 +5,7 @@ class Article < ActiveRecord::Base
   has_many :images, dependent: :destroy
   has_many :paragrafs, dependent: :destroy
   has_many :comments, dependent: :destroy
-  accepts_nested_attributes_for :images, allow_destroy: true
-  accepts_nested_attributes_for :paragrafs, allow_destroy: true 
-  accepts_nested_attributes_for :comments, allow_destroy: true, :reject_if => lambda { |a| a[:content].blank? }
+  accepts_nested_attributes_for :images, :reject_if => lambda { |a| a[:image_file].blank? }
+  accepts_nested_attributes_for :paragrafs, :reject_if => lambda { |a| a[:body].blank? }, :allow_destroy => true 
+  accepts_nested_attributes_for :comments, :reject_if => lambda { |a| a[:content].blank? }, allow_destroy: true
 end

@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div id="content">
+  <h1>Listing articles</h1>
+  <section id="mainContent">
+      <article class="blogpost">
+        <header class="abNews">
+          <h2><%= @article.title %></h2>
+          <p class="sig">Posted on <%= @article.created_at  %> by 
+            <a href="#"><%= @article.author %></a> - 
+            <a href="#comments"><%= @article.comments.size %> comments</a>
+          </p>
+        </header>
+        <div class="artbody">
+          <div class="arttxt">
+            <% for image in @article.images %>
+               <%= render "/images/image", :locals => { :id => image.id }  %><br/>
+            <% end %>
+            <% for paragraf in @article.paragrafs %>
+               <%=h paragraf.body %><br/>
+            <% end %>              
+          </div>
+        </div>
+        <br>
+        
+        <%= link_to 'Edit', edit_article_path(@article) %> |
+        <%= link_to 'Back', articles_path %>
+        
+        <%= render :partial => @article.comments.reverse %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @article.author %>
-</p>
-
-<p>
-  <%= render :partial => @article.images %>
-</p>
-
-<p>
-  <%= render :partial => @article.paragrafs %>
-</p>
-
-<h2>Comments</h2>
-<div id="comments">
-  <%= render :partial => @article.comments.reverse %>
+        <%= render 'comments/form' %>
+      </article>
+    
+    <p id="notice"><%= notice %></p>
+  </section>
 </div>
 
-<%= render 'comments/form' %>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+

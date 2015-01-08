@@ -1,4 +1,3 @@
-
 <div id="content">
   <p id="notice"><%= notice %></p>
   <table id="admintabel">
@@ -13,7 +12,7 @@
             <p>
               <b><%= @staff.name %></b>, 
               <% for paragraf in @staff.paragrafs %>
-              <%=h paragraf.body %><br/>
+                <%=h paragraf.body %><br/>
               <% end %>
             </p><br>
           </td>

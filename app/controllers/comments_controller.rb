@@ -15,7 +15,6 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = @article.comment.new
   end
 
   # GET /comments/1/edit

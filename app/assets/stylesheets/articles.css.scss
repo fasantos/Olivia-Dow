@@ -1,3 +1,35 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+/* CSS Document */
+
+.blogpost{
+	position: relative;
+	border-radius: 11px;
+	width: 681px;
+	padding: 5px;
+	margin: 20px;
+	background: linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
+	background: -webkit-linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
+	background: -o-linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
+	background: -moz-linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
+}
+
+.artbody{
+	display: none;
+}
+
+
+.artbody.active{
+	display: block;
+}
+
+.asar{
+	top: 0px;
+}
+
+.abNews:hover{
+	cursor: pointer;
+}
