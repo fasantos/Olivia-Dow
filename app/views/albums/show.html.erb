@@ -4,11 +4,9 @@
   <strong>Title:</strong>
   <%= @album.title %>
 </p>
-
-<p>
-  <strong>Poster:</strong>
-  <%= @album.poster %>
-</p>
+<% for image in @album.images %>
+  <%= render "/images/image", :locals => { :id => image.id }  %><br/>
+<% end %>
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>

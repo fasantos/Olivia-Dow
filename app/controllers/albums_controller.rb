@@ -15,10 +15,12 @@ class AlbumsController < ApplicationController
   # GET /albums/new
   def new
     @album = Album.new
+    @album.images.build
   end
 
   # GET /albums/1/edit
   def edit
+    @album.images.build
   end
 
   # POST /albums
@@ -69,6 +71,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:title, :poster)
+      params.require(:album).permit(:title, :poster, images_attributes: [:id, :image_file, :_destroy])
     end
 end

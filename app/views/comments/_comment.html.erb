@@ -5,9 +5,10 @@
   <%= div_for comment do %>
     <header>
       <p class="sig">
-        <a href="#"><%= comment.author  %>  on <%= comment.created_at  %></a>
+        <a href="#"><%= comment.author  %></a>  on <%= comment.created_at  %>
       </p>
     </header>
     <p><%= h(comment.body) %></p>
+    <%= link_to 'Destroy', [@article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 </section>

@@ -1,27 +1,15 @@
-<h1>Listing albums</h1>
+<header>
+  <h1>Albums</h1>
+</header>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Poster</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @albums.each do |album| %>
-      <tr>
-        <td><%= album.title %></td>
-        <td><%= album.poster %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @albums.each do |album| %>
+  <div id="album-fotos">
+      <a href="/albums/<%= album.id %>" id="foto<%= album.id %>"><span><%= album.title %></span></a>
+  </div>
+  <%= album.poster %> | <%= link_to 'Show', album %> | <%= link_to 'Edit', edit_album_path(album) %> | 
+  <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %><br>
 
-<br>
 
 <%= link_to 'New Album', new_album_path %>
