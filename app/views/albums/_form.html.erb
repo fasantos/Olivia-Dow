@@ -19,11 +19,12 @@
     <%= f.label :poster %><br>
     <%= f.text_field :poster %>
   </div>
+<div class="fields">
   <%= f.fields_for :images do |fi| %>
      <%= render "images/image_fields", :f => fi %>
-     <%= fi.check_box :_destroy %>
-     <%= fi.label :_destroy, "Remove image" %>
   <% end %>
+  <%= link_to_add_fields "Add photo", f, :images %><br>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>

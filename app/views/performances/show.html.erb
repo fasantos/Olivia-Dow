@@ -5,10 +5,22 @@
   <%= @performance.title %>
 </p>
 
-<p>
-  <strong>Poster:</strong>
-  <%= @performance.poster %>
-</p>
+ <p>
+   <% for act in @performance.acts %>
+    <%=h act.name %>
+    <p>
+      <% for clip in act.clips %>
+        <%=h clip.adress %><br/>
+      <% end %>
+    </p>
+    <%=h act.name %>
+    <p>
+      <% for paragraf in act.paragrafs %>
+        <%=h paragraf.body %><br/>
+      <% end %>
+    </p><br>
+   <% end %>
+ </p><br>
 
 <%= link_to 'Edit', edit_performance_path(@performance) %> |
 <%= link_to 'Back', performances_path %>

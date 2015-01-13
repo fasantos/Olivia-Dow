@@ -21,6 +21,7 @@
    <%= f.fields_for :paragrafs do |fp| %>
      <%= render "paragrafs/paragraf_fields", :f => fp %>
    <% end %>
+   <%= link_to_add_fields "Add paragraf", f, :paragrafs %><br> 
   <div class="actions">
     <%= f.submit %>
   </div>
