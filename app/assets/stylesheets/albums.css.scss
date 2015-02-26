@@ -2,262 +2,70 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@charset "utf-8";
-/* CSS Document */
+@import "compass/css3";
+@import "compass/css3/transition";
+$default-scale-x: 1.6;
+$default-scale-y: $default-scale-x;
 
-/* MAIN */
-
-div#content{
-	display: table;
-}
-
-section{
-	position:relative;
-}
-
-section h1{
-	position:relative;
-	top: 60px;
-	text-align: center;
-}
-
-#album-fotos{
-	position: relative;
-	top: 0px;
-	width: 980px;
-	padding: 110px;
-	overflow: hidden;
-	list-style: none; 
-	text-align: center;
-}
-
-#album-fotos a{
-	float: left;
-	width: 200px;
-	height: 113px;
-	margin: 20px;
-	border: 5px solid #ffffff;
-	background-color: #ffffff;
-	box-shadow: 1px 1px 3px rgba(0,0,0,.4);
-	-webkit-transition: all 0.4s ease-in;
-	cursor: pointer;
-}
-
-#album-fotos a span{
-	position: relative;
-	top: -85px;
-	opacity: 0;
-	color: #ffffff;
-	text-shadow: #000000;
-	background-color: rgba(0,0,0,.3);
-	font-size: 9pt;
-	line-height: 370px;
-	padding: 5px;
-	text-align:center;	
-}
-
-#album-fotos a:hover{
-	-webkit-transform: scale(2.0);
-}	
-
-#album-fotos a:hover span{
-	opacity: 1;
-}
-
-#album-fotos a#foto01{
-	background: url(../_images/_posters/photo20.jpg) no-repeat;	
-	background-position: 50% 50%;
-	background-size: 400px 224px;
-	background-color: #ffffff;
-}
-
-#album-fotos a#foto01:hover{
-	background-position: 50% 50%;
-	background-size: 200px 113px;	
-}
-
-ul#album-fotos li#foto02{
-	background: url(../_images/_posters/photo19.jpg) no-repeat;
-	background-position: 50% 50%;
-	background-size: 400px 225px;
-	background-color: #ffffff;
-}
-
-ul#album-fotos li#foto02:hover{
-	background-position: 50% 50%;
-	background-size: 200px 113px;
-}
-
-ul#album-fotos li#foto03{
-	background: url(../_images/_posters/photo18.jpg) no-repeat;	
-	background-position: 50% 50%;
-	background-size: 225px 225px;
-	background-color: #ffffff;
-}
-
-ul#album-fotos li#foto03:hover{
-	background-position: 50% 50%;
-	background-size: 113px 113px;
-}
-
-ul#album-fotos li#foto04{
-	background: url(../_images/_posters/photo17.jpg) no-repeat;	
-	background-position: 50% 50%;
-	background-size: 400px 225px;
-	background-color: #ffffff;
-}
-
-ul#album-fotos li#foto04:hover{
-	background-position: 50% 50%;
-	background-size: 200px 113px;
-}
-
-ul#album-fotos li#foto05{
-	background: url(../_images/_posters/photo16.jpg) no-repeat;	
-	background-position: 50% 50%;
-	background-size: 255px 255px;
-	background-color: #ffffff;
-}
-
-ul#album-fotos li#foto05:hover{
-	background-position: 50% 50%;
-	background-size: 113px 113px;
-}	
-
-ul#album-fotos li#foto06{
-	background: url(../_images/_posters/photo14.jpg) no-repeat;
-	background-position: 50% 50%;
-	background-size: 255px 225px;
-	background-color: #ffffff;	
-}
-
-ul#album-fotos li#foto06:hover{
-	background-position: 50% 50%;
-	background-size: 113px 113px;
-}
-
-ul#album-fotos li#foto07{
-	background: url(../_images/_posters/photo13.jpg) no-repeat;	
-	background-position: 50% 50%;
-	background-size: 225px 225px;
-	background-color: #ffffff;
-}
-
-ul#album-fotos li#foto07:hover{
-	background-position: 50% 50%;
-	background-size: 113px 113px;
-}
-
-ul#album-fotos li#foto08{
-	background: url(../_images/_posters/photo11.jpg) no-repeat;	
-	background-position: 50% 50%;
-	background-size: 225px 225px;
-	background-color: #ffffff;
-}
-
-ul#album-fotos li#foto08:hover{
-	background-position: 50% 50%;
-	background-size: 113px 113px;
-}	
-
-ul#album-fotos li#foto09{
-	background: url(../_images/_randomPhotos/photo1.jpg) no-repeat;
-	background-position: 50% 50%;
-	background-size: 400px 225px;
-	background-color: #ffffff;	
-}
-
-ul#album-fotos li#foto09:hover{
-	background-position: 50% 50%;
-	background-size: 200px 113px;
-}
+@import "media_menu";
 
 /* lightbox*/
 
+.backgroundsize{
+    width: 984px;
+    height:1050px;
+}
+
 .background{
 	position:absolute;
-	//top:-800px;
-	left:0px;
-	width:100%;
-	height:100%;
+	width: 984px;
+        height:1050px;
 	background-color:rgba(0,0,0,.8);
-	opacity:.0;
-	-moz-opacity:.0;
-	-webkit-opacity:.0;
-	filter: alpha(opacity=0);
-	-o-opacity:.0;
+	@include opacity(0.0);
 	z-index:2;
 	display:none;
-	//background-attachment: scroll;
-	//border: 1px dashed red;
 }
 
 .box{
 	position: relative;
 	display:none;
-	top: 24px;
-	left: 12px;
 	margin: auto auto auto auto;
+        //width: 984px;
+        height:1050px;
 }
 	
 .close{
 	position:relative;
 	margin-right:10px;
 	cursor:pointer;
-	//color:#FFF;
-	top:140px;
-	left:785px;
+	top: -10px;
+	left: 817px;
 	z-index:102;
-	width: 20px;
-	height:20px;
-}
-
-.close img:hover{
-	width:35px;
-	height:35px;
 }
 
 .right{
 	position:relative;
 	margin-right:10px;
 	cursor:pointer;
-	//color:#FFF;
-	top:320px;
-	left:830px;
+	top:315px;
+	left:860px;
 	z-index:102;
-	width: 30px;
-	height:30px;
 }
 	
-.right img:hover{
-	width:35px;
-	height:35px;
-}
 	
 .left{
 	position:relative;
 	margin-right:10px;
 	cursor:pointer;
-	//color:#FFF;
 	top:375px;
-	left:80px;
+	left:100px;
 	z-index:102;
-	width: 20px;
-	height:20px;
-}
-	
-.left img:hover{
-	width:35px;
-	height:35px;
-}
-	
+}	
 
 .slides{
 	position: relative;
-	top:172px;
-	left:140px;
-	width:661;
-	height:372;
+	top: -60px;
+	left:160px;
 }
 
 .slides ul{
@@ -268,6 +76,4 @@ ul#album-fotos li#foto09:hover{
 	
 	border-radius: 10px;
 	border: 2px solid rgb(157, 193, 236);
-	//border: 2px solid rgb(256, 256, 256);
-	//border: 2px solid rgba(47,31,15,1);
 }

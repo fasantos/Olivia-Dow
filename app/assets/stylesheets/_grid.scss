@@ -1,0 +1,158 @@
+@import "compass/layout/grid-background";
+
+
+//grid for development
+$grid-background-column-color: rgba(100, 225, 100, 0.25);
+$grid-background-gutter-color: rgba(225, 100, 100, 0.25);
+$grid-background-total-columns: 12;
+$grid-background-column-width: 62px;
+$grid-background-gutter-width: 20px;
+$grid-background-offset: 10px;
+$grid-background-baseline-color: rgba(0, 0, 0, 0.5);
+$grid-background-baseline-height: 24px;
+$show-column-grid-backgrounds: true;
+$show-baseline-grid-backgrounds: true;
+$show-grid-backgrounds: true;
+$grid-background-force-fluid: false;
+
+/* Containers
+----------------------------------------------------------------------------------------------------*/
+
+body {
+    min-width: 984px;
+}
+
+.container {
+    width:984px;
+    margin: 9px ;
+}
+
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+@for $i from  1 through 12{
+
+    .grid, .gridten_#{$i}, .grid_#{$i}{
+	display:inline;
+	float: left;
+	position: relative;
+	margin: 10px;
+        //border: 1px dashed red;
+    }
+
+    .push_#{$i}, .pull_#{$i}{
+        position:relative;
+    }
+
+    
+    /* Grid >> 12 Columns
+    ----------------------------------------------------------------------------------------------------*/
+
+    .grid_#{$i}{
+	width: ($i * 62px) + ($i * 20px - 20px)  ;
+    } 
+
+    /* Suffix plus 10px >> 12 Columns
+    ----------------------------------------------------------------------------------------------------*/
+
+    .gridten_#{$i}{
+	width: ($i * 62px) + ($i * 20px - 11px)  ;
+    }
+
+
+    /* Prefix Extra Space >> 12 Columns
+    ----------------------------------------------------------------------------------------------------*/
+
+    .prefix_#{$i}{
+	padding-left: ($i * 62px) + ($i * 20px)  ;
+    } 
+
+
+    /* Suffix Extra Space >> 12 Columns
+    ----------------------------------------------------------------------------------------------------*/
+
+    .suffix_#{$i}{
+	padding-right: ($i * 62px) + ($i * 20px)  ;
+    } 
+
+
+    /* Push Space >> 12 Columns
+    ----------------------------------------------------------------------------------------------------*/
+
+    .push_#{$i}{
+	left: ($i * 62px) + ($i * 20px)  ;
+    } 
+
+
+    /* Pull Space >> 12 Columns
+    ----------------------------------------------------------------------------------------------------*/
+
+    .pull_#{$i}{
+	left: -(($i * 62px) + ($i * 20px));
+    } 
+}
+
+
+/* Grid >> Children (Alpha ~ First, Omega ~ Last)
+----------------------------------------------------------------------------------------------------*/
+
+.alpha{
+    margin-top: 0;
+}
+
+.beta{
+    margin-right: 0;
+}
+
+.gama{
+    margin-bottom: 0;
+}
+
+.omega{
+    margin-left: 0;
+}
+
+.kappa{
+    margin-left: 11px;
+}
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix {
+  zoom: 1;
+}
+

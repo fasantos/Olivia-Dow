@@ -1,6 +1,27 @@
 Rails.application.routes.draw do
+  get 'static_pages/intro'
+  
+  get 'aboutus/cprights' => 'static_pages#cprights'
+
+  get 'aboutus/premises' => 'static_pages#premises'
+
+  get 'aboutus/history' => 'static_pages#history'
+  
+  get 'aboutus/books' => 'static_pages#books'
+
+  get 'aboutus/archive' => 'static_pages#archive'
+
   get 'welcome/index'
 
+  get '/login' => 'user_sessions#new', as: 'login'
+  get '/logout'=> 'user_sessions#destroy', as: 'logout'
+  
+  resources :contacts, only: [:new, :create]
+  
+  resources :user_sessions
+
+  resources :users
+  
 #  resources :clips
 
 #  resources :acts
@@ -47,7 +68,7 @@ get 'images/code_image/:id' => 'images#code_image'
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+   root 'static_pages#intro'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,4 +1,5 @@
 class ClipsController < ApplicationController
+  before_filter :require_user
   before_action :set_clip, only: [:show, :edit, :update, :destroy]
 
   # GET /clips

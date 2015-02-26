@@ -1,28 +1,30 @@
-<%= form_for(@staff, :html => { :multipart => true }) do |f| %>
-  <% if @staff.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
+<div class="grid_12">
+  <%= form_for(@staff, :html => { :multipart => true }) do |f| %>
+    <% if @staff.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
 
-      <ul>
-      <% @staff.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @staff.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-   <%= f.fields_for :images do |fi| %>
-     <%= render "images/image_fields", :f => fi %>
-   <% end %>
-   <%= f.fields_for :paragrafs do |fp| %>
-     <%= render "paragrafs/paragraf_fields", :f => fp %>
-   <% end %>
-   <%= link_to_add_fields "Add paragraf", f, :paragrafs %><br> 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+     <%= f.fields_for :images do |fi| %>
+       <%= render "images/image_fields", :f => fi %>
+     <% end %><br>
+     <%= f.fields_for :paragrafs do |fp| %>
+       <%= render "paragrafs/paragraf_fields", :f => fp %>
+     <% end %>
+     <%= link_to_add_fields "Add paragraf", f, :paragrafs %><br><br> 
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>  
+</div>

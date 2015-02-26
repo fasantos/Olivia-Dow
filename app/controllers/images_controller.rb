@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  before_filter :require_user, only: [:index, :new, :edit, :update, :destroy]
   before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   # GET /images
@@ -30,6 +31,8 @@ class ImagesController < ApplicationController
       choose_owner(@article)
     elsif @album = Album.find(params[:album_id])
       choose_owner(@album)
+    elsif @performance = Performance.find(params[:performance_id])
+      choose_owner(@performance)
     end
   end
 
@@ -75,7 +78,7 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:adress, :data, :staff_id, :article_id, :album_id)
+      params.require(:image).permit(:adress, :data, :staff_id, :article_id, :album_id, :performance_id)
     end
     
     #chooses the model owner of that  

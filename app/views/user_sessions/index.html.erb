@@ -1,0 +1,13 @@
+<h3 class="grid_12">Listing user_sessions</h3>
+
+<% @user_sessions.each do |user_session| %>
+  <div class="navigation">
+    <%= link_to 'Show', user_session %> | 
+    <%= link_to 'Edit', edit_user_session_path(user_session) %> | 
+    <%= link_to 'Destroy', user_session, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
+
+  <div class="navigation">
+    <%= link_to 'New User session', new_user_session_path %>    
+  </div>

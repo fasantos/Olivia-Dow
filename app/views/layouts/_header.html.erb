@@ -1,22 +1,24 @@
 <div id="interface">
-	<header id="mainH">
-	  <img src="_images/animlog.gif" class="icon" width="180" height="180"/>
-	  <div id="centH"><b><i>
-	    <h1>Olivia Dow</h1>
-	    <h3>School of Russian Ballet</h3>
-	    <p>The finest coaching tradition in</p>
-	    <p>Russian Classical Ballet – Legat System in Malta</p>
-	  </div></b></i>
-	  <div id="contacts">
-	    <p>	Acredited member of:<br/>
-	      <a href="http://www.russianballetsociety.co.uk/" target="_blank" class="logos"><img src="_images/rbslogo.jpg" id="icon" width="30" height="30"/></a>
-	      <a href="http://www.cid-portal.org/" target="_blank" class="logos"><img src="_images/cid-logo.jpg" id="icon" width="30" height="30"/></a>
-	      <a href="http://www.cdet.org.uk/" target="_blank" class="logos"><img src="_images/cdetlogo.jpg" id="icon" width="50" height="30"/></a>
-	      <a href="http://ofqual.gov.uk/" target="_blank" class="logos"><img src="_images/ofquallogo.jpg" id="icon" width="50" height="30"/></a><br/><br/>
-	      Olivia Dow School of Russian Ballet<br/>
-	      Leli Falzon Street, Naxxar, Malta.<br/>
-	      Tel: 2158 3368, 2141 9725.<br/>
-	      Fax: 2142 2592. Mobile: 9947 4127.<br/>
-	      email: <a href="mailto: news@oliviadow.com">news@oliviadow.com</a></p>
-	  </div>
-	</header>
+  <header id="mainH">
+    <div class="grid_3 gama">
+      <%= image_tag "animlog.gif", alt: "Logo", id: "logo" %>
+    </div>
+    <div id="centH" class="grid_6 textcenter gama"><b><i>
+      <h1>Olivia Dow</h1>
+      <h2>School of Russian Ballet</h2>
+      <h3>The finest coaching tradition in</h3>
+      <h3>Russian Classical Ballet – Legat System in Malta</h3></b></i>
+    </div>
+    <div id="contacts" class="grid_3 gama">
+      <p>Accredited member of:</p>
+      <p><a href="http://www.russianballetsociety.co.uk/" target="_blank"><%= image_tag "rbslogo.jpg", class: "icon" %></a>
+        <a href="http://www.cid-portal.org/" target="_blank"><%= image_tag "cid-logo.jpg", class: "icon" %></a>
+        <a href="http://www.cdet.org.uk/" target="_blank"><%= image_tag "cdetlogo.jpg", class: "icon" %></a>
+        <a href="http://ofqual.gov.uk/" target="_blank"><%= image_tag "ofquallogo.jpg", class: "icon" %></a></p>
+      <p>Olivia Dow School of Russian Ballet</p>
+      <p>106, Leli Falzon Street, Naxxar, Malta.</p>
+      <p>Tel: 2158 3368, 2141 9725.</p>
+      <p>Fax: 2142 2592. Mobile: 9947 4127.</p>
+      <p>email: <a href="mailto: info@oliviadow.net" class="alternative_a" >info@oliviadow.net</a></p>
+    </div>
+  </header>

@@ -1,0 +1,6 @@
+<div class="navidation">
+  <a href="<%= articles_path %>" class="grid_1 button" ><p>Back</p></a>
+  <% if current_user %>
+    <a href="<%=  edit_article_path(@article) %>" class="grid_1 button" ><p>Edit</p></a>
+  <% end %>
+</div>

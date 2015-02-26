@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103144956) do
+ActiveRecord::Schema.define(version: 20150208230935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 20150103144956) do
     t.datetime "updated_at"
   end
 
+  create_table "contacts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "images", force: true do |t|
     t.binary   "data"
     t.integer  "staff_id"
@@ -63,6 +68,7 @@ ActiveRecord::Schema.define(version: 20150103144956) do
     t.datetime "updated_at"
     t.string   "filename"
     t.string   "filetype"
+    t.integer  "performance_id"
   end
 
   create_table "paragrafs", force: true do |t|
@@ -84,6 +90,21 @@ ActiveRecord::Schema.define(version: 20150103144956) do
 
   create_table "staffs", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_sessions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

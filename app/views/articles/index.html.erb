@@ -1,22 +1,27 @@
-<div id="content">
-  <h1>Listing articles</h1>
-  <section id="mainContent">
-    <% @articles.each do |article| %>
-      <article class="blogpost">
-        <header class="abNews">
-          <h2><%= article.title %></h2>
-          <p class="sig">Posted on <%= article.created_at  %> by <a href="#"><%= article.author %></a> - <a href="#comments"><%= article.comments.size %> comments</a></p>
-        </header>
-
-        <br>
-        
-        <%= link_to 'Show', article %> | <%= link_to 'Edit', edit_article_path(article) %> | 
-        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </article>
-    <% end %>
-
-    <br>
-
-    <%= link_to 'New Article', new_article_path %>
+<section class="gridten_9 alpha gama omega">
+  <% @articles.each do |article| %>
+    <% @article = article %>
+    <article class="blogpost gridten_9 beta gama">
+      <header class="abNews">
+        <h3><%= @article.title %></h3>
+        <p class="sig">Posted <%= time_ago_in_words(@article.created_at)  %> ago by 
+          <b><%= @article.author %></b> - 
+          <a href="#comments"><%= @article.comments.size %> comments</a>
+        </p>
+      </header>
+      <section class="navigation">
+        <%= link_to 'Show', article %>
+        <% if current_user %>
+           | <%= link_to 'Edit', edit_article_path(@article) %> | 
+          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </section>
+    </article>
+  <% end %>
+  <% if current_user %>
+  <section class="navigation">
+    <%= link_to 'New Article', new_article_path %>    
   </section>
-</div>
+<% end %>
+</section>
+<%=render "layouts/aside"%>

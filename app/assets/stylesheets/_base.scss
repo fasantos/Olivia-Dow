@@ -1,0 +1,326 @@
+@import "compass";
+@import "compass/reset";
+@import "grid";
+@import "compass/typography/vertical_rhythm";
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+@include establish-baseline();
+
+$base-color:#003; 
+$base-font-family: Helvetica, sans-serif;
+$base-background-color: rgba(227, 243, 246,.8);
+$base-box-shadow: 0px 0px 10px rgba(0,0,0, .7);
+$base-border: 1px solid rgb(46, 108, 186);
+
+body{
+    font-family: $base-font-family;
+    color: $base-color;
+    background: inline-image('poster2011.jpg') no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    a:hover{
+        background: none;	
+    }
+}
+
+.hidden{ 
+    display: none;
+}
+
+.actions input{
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+h1{
+    @include adjust-font-size-to(65px);
+    font-weight: 900;
+}
+
+h2{
+    @include adjust-font-size-to(40px);
+    font-weight: 900;
+}
+
+h3{
+    @include adjust-font-size-to(20px);
+    font-weight: 700;
+}
+
+b{
+    font-weight: 600;    
+}
+
+p{
+    text-align: justify;
+}
+
+.alternative_a{
+    color: #aaa;
+    &:hover{
+        color: #fff;
+    }
+}
+
+.textcenter{
+    text-align: center;
+}
+
+small{
+    @include adjust-font-size-to(10px)
+}
+
+.button{
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    background: rgb(46, 108, 186);
+
+    &:hover{
+        background: rgb(46, 108, 186);	
+    }
+    
+    p{
+        color: #fff;
+        font-weight: 700;
+        background: rgb(23, 54, 93);
+        border-radius: 3px;
+        margin: 2px;
+
+        &:hover{
+            background: #003;	
+        }
+    } 
+                
+}
+
+.navigation{
+    margin: 20px 10px;
+    text-align: center;
+    
+    a{
+        color:  $base-color;
+        font-weight: 700;
+
+        &:hover{
+            color: #fff;
+        }
+    }
+}
+
+/* Main Interface */
+
+#interface{
+	width:984px;
+        //@include grid-background(); //grid for development
+	background-color: rgba(227, 243, 246,.9);
+	margin: 10px auto 10px auto;
+	box-shadow: 0px 0px 10px rgba(0,0,0, .7);
+	border: 1px solid rgb(46, 108, 186);
+	border-radius: 100px;
+}
+
+/* Interface Header */
+
+#mainH{
+    background-color: rgba(255, 255, 255, 1);
+    height:186px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    font-family: "Century Schoolbook L", serif;
+    //text-align: center;    
+    font-style: italic;
+
+    
+
+    p{
+        @include adjust-font-size-to(13px);
+        font-family: $base-font-family;
+        font-style: normal;
+        font-weight:  normal;
+        text-align: left;
+    }
+}
+
+#logo{
+    margin: 0px 0px 0px 54px;
+    border-radius: 100px;
+    height: 160px;
+}
+
+.icon{
+    height: 22px;
+    border-radius: 4px;
+}
+
+/* Navigation Menu */
+
+#menu{
+	background: rgb(23, 54, 93);
+	position: relative;
+	height: 28px;
+	width:984px;
+	border-top: 1px solid rgb(46, 108, 186);
+	border-bottom: 1px solid rgb(46, 108, 186);
+        padding: 2px 0px 0px 0px;
+        
+}
+
+
+#menu li{
+	text-transform: uppercase;
+	background: rgb(23, 54, 93);
+	border: 1px solid rgb(46, 108, 186);
+	list-style: none;
+	position: relative;
+	float: left;
+	left: 50px;
+	width: 150px;
+	border-radius: 5px;
+	margin: 0px 0px 0px 20px;
+        padding: 0px;
+}
+
+#menu ul li a{
+	color: #fff; 
+	text-align: center;	
+	text-decoration: none;
+	display: block;
+	font-weight: 700;
+        padding: 0px;
+}
+
+#menu ul ul{
+    position: absolute;
+    top: -47px;
+    visibility: hidden;
+    z-index: 100;
+
+    li{
+	top: 72px;
+	left: -21px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+    }
+} 
+
+#menu ul li:hover{
+    background: #003;
+
+    ul{
+	visibility: visible;
+        z-index: 10;
+    }
+}
+
+/* Content */
+
+#content{
+	display: table;
+}
+
+/* ASIDE */
+
+aside{
+	position: relative;
+	display: table-cell;
+	width: 260px;
+	padding: 0px;
+	border-left: 1px solid rgb(46, 108, 186);
+	background: linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
+	background: -webkit-linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
+	background: -o-linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
+	background: -moz-linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
+}
+
+.asar{
+        //top: -342px;
+	position: relative;
+	border-radius: 11px;
+	padding: 10px;
+	margin: 20px;
+	background: linear-gradient(left, rgba(137, 173, 216,.4), rgba(227, 243, 246,.4));
+	background: -webkit-linear-gradient(left, rgba(137, 173, 216,.4), rgba(227, 243, 246,.4));
+	background: -o-linear-gradient(left, rgba(137, 173, 216,.4), rgba(227, 243, 246,.4));
+	background: -moz-linear-gradient(left, rgba(137, 173, 216,.4), rgba(227, 243, 246,.4));
+}
+
+#acord li p{
+	text-align:center;
+	margin: 1px;
+	margin-right: 54px;
+	border-radius: 5px;
+	padding-left:  15px;
+	padding-right: 15px;
+	background: linear-gradient(left, rgba(227, 243, 246,.4), rgba(137, 173, 216,.4));
+	background: -webkit-linear-gradient(left, rgba(227, 243, 246,.4), rgba(137, 173, 216,.4));
+	background: -o-linear-gradient(left, rgba(227, 243, 246,.4), rgba(137, 173, 216,.4));
+	background: -moz-linear-gradient(left, rgba(227, 243, 246,.4), rgba(137, 173, 216,.4));
+}
+
+#acord li p:hover{
+	background: linear-gradient(left, rgba(137, 173, 216,.4), rgba(227, 243, 246,.4));
+	background: -webkit-linear-gradient(left, rgba(137, 173, 216,.4), rgba(227, 243, 246,.4));
+	background: -o-linear-gradient(left, rgba(137, 173, 216,.4), rgba(227, 243, 246,.4));
+	background: -moz-linear-gradient(left, rgba(137, 173, 216,.4), rgba(227, 243, 246,.4));
+	cursor: pointer;
+}
+
+.asar ul{
+	padding-left: 40px;
+	list-style-type: none;
+}
+
+.asar ul ul{
+	padding-left: 30px;
+	list-style-type: none;
+	display: none;
+}
+
+.asar ul ul .active{
+	display: block;
+}
+.asar a{
+	color: #000;
+	text-decoration: none;
+}
+
+.asar a:hover{
+	color: #000;
+	text-decoration: underline;
+}
+
+.asar img{
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+}
+
+/* FOOTER*/
+
+footer{
+    background-color: #003;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    color: #fff;
+
+    h3{
+        text-align: justify;
+    }
+    
+
+    a{
+	font-style:italic;	
+	color: rgb(46, 108, 186);
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+
+#lowfoot p{
+	text-align: center;
+	padding-bottom: 30px;
+}

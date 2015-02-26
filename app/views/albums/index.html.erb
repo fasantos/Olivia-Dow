@@ -1,15 +1,16 @@
-<header>
-  <h1>Albums</h1>
-</header>
-
+<% if current_user %>
+  <% album = Album.first %>
+  <%= render "album", :locals => { :album => album } %>
+<% end %>
 
 <% @albums.each do |album| %>
-  <div id="album-fotos">
-      <a href="/albums/<%= album.id %>" id="foto<%= album.id %>"><span><%= album.title %></span></a>
-  </div>
-  <%= album.poster %> | <%= link_to 'Show', album %> | <%= link_to 'Edit', edit_album_path(album) %> | 
-  <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %><br>
+  <% if album.id != Album.first.id %>
+    <%= render "album", :locals => { :album => album } %>
+  <% end %>
+<% end %>
 
-
-<%= link_to 'New Album', new_album_path %>
+<% if current_user %>
+  <section class="navigation grid_12">
+    <%= link_to 'New Album', new_album_path %>    
+  </section>
+<% end %>

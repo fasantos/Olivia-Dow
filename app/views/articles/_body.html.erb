@@ -1,0 +1,20 @@
+<div class="artbody">
+  <div class="arttxt">
+    <% for image in @article.images %>
+      <%= render "/images/image", :locals => { :id => image.id }  %>
+    <% end %>
+    <% for paragraf in @article.paragrafs %>
+      <%=h paragraf.body %><br/>
+    <% end %>              
+  </div>
+  <% if  @article.comments.size >= 1  %>
+    <hr>
+    <section id="comments">
+      <h3>Comments</h3>      
+      <%= render :partial => @article.comments.reverse %>
+    </section>
+  <% end %>
+  <hr>
+  <h3>Post a comment</h3>
+  <%= render 'comments/form' %>
+</div>

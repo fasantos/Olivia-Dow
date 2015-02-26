@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  before_filter :require_user, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
   # GET /albums
@@ -20,7 +21,6 @@ class AlbumsController < ApplicationController
 
   # GET /albums/1/edit
   def edit
-    @album.images.build
   end
 
   # POST /albums

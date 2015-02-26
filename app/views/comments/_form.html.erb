@@ -11,19 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
+  <div class="prefix_2 grid_1 alpha beta omega">
+    <p>
+      <%= f.label :author %>:
+    </p>
+    <div class="actions container grid_1">
+    </div>
+    <p>
+      <%= f.label :email %>:
+    </p>
+    <div class="actions container grid_1">
+    </div>
+    <p>
+      <%= f.label :body %>:
+    </p>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+
+  <div class="grid_6 alpha beta gama omega">
+    <p>
+      <%= f.text_field :author, cols: "40", placeholder: "Required", class: "grid_4 alpha beta omega" %>
+    </p>
+    <div class="container grid_4">
+    </div>
+    <p>
+      <%= f.text_field :email, cols: "40", placeholder: "Required", class: "grid_4 alpha beta omega" %>
+    </p>
+    <div class="container grid_4">
+    </div>
+    <p>
+      <%= f.text_area :body, cols: "40", rows: "5", placeholder: "Leave your comment here...", class: "grid_4 alpha beta omega" %>
+    </p>
   </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="prefix_1 grid_2 alpha beta omega"><%= f.text_field :nickname, :hint => 'Leave this field blank!', class: "grid_1 alpha beta omega hidden" %></div>
+  <div class="actions grid_6 alpha beta gama omega">
+    <%= f.submit 'Post comment', class: "grid_2 beta omega" %>
   </div>
 <% end %>

@@ -1,38 +1,44 @@
-<nav id="menu">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>                                     
-                    </li>
-                    <li>
-                        <a href="#">About Us</a>
-                        <ul>
-                            <li>
-                                <a href="administration.html">Administration</a>
-                            </li>
-                            <li>
-                                <a href="#">History</a>  
-                            </li>
-                            <li>
-                                <a href="#">Premises</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="news.html">News</a>  
-                    </li>
-                    <li>
-                        <a href="#">Gallery</a>
-                        <ul>
-                            <li>
-                                <a href="videos.html">Performances</a>  
-                            </li>
-                            <li>
-                                <a href="fotos.html">Photos</a>
-                            </li>
-                        </ul>
-                    </li> 
-                    <li>
-                        <a href="contactus.html">Contact Us</a>    
-                    </li>               
-                </ul>
-            </nav>
+  <nav id="menu">
+    <ul>
+      <li>
+        <%= link_to "Home", "/welcome/index" %>                                     
+      </li>
+      <li>
+        <a href="#">About Us</a>
+        <ul>
+          <li>
+            <%= link_to "Administration", staffs_path %>
+          </li>
+          <li>
+            <%= link_to "Premises", aboutus_premises_path %>  
+          </li>
+          <li>
+            <%= link_to "History", aboutus_history_path %>
+          </li>
+          <li>
+            <%= link_to "Archives", aboutus_archive_path %>
+          </li>
+          <li>
+            <%= link_to "Books", aboutus_books_path %>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <%= link_to "News", articles_path %> 
+      </li>
+      <li>
+        <a href="#">Gallery</a>
+        <ul>
+          <li>
+            <%= link_to "Performances", performances_path %>  
+          </li>
+          <li>
+            <%= link_to "Photos", albums_path %>
+          </li>
+        </ul>
+      </li> 
+      <li>
+        <%= link_to "Contact Us", new_contact_path %>  
+      </li>
+    </ul>
+  </nav>

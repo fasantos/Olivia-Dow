@@ -1,2 +1,17 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="gridten_9 alpha gama omega">
+  <section class="intro gridten_9 beta">
+    <% @album = Album.first %>
+    <div class="active">
+      <%= render "/images/image", :locals => { :id => @album.images.first.id }  %>
+    </div>
+    <% for id in @album.images.second.id..@album.images.last.id %>
+      <div>
+        <%= render "/images/image", :locals => { :id => id }  %>
+      </div>
+    <% end %>
+  </section>
+  <h3 class="gridten_9 beta gama">Latest News:</h3>
+  <%= render :partial => @article = Article.last %>  
+</div>
+
+<%=render "layouts/aside"%>

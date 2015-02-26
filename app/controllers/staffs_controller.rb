@@ -1,4 +1,5 @@
 class StaffsController < ApplicationController
+  before_filter :require_user, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
 
   # GET /staffs
@@ -21,7 +22,9 @@ class StaffsController < ApplicationController
 
   # GET /staffs/1/edit
   def edit
-    @staff.paragrafs.build
+    if @performance.images.size < 1
+      @performance.images.build
+    end
   end
 
   # POST /staffs

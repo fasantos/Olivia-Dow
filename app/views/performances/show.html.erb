@@ -1,26 +1,47 @@
-<p id="notice"><%= notice %></p>
+<h2 class=" grid_12 textcenter"><%= @performance.title %></h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @performance.title %>
-</p>
+<div id="filme" class="grid_12">
+  <%= image_tag "poster2011.jpg" %>
+</div>
 
- <p>
-   <% for act in @performance.acts %>
-    <%=h act.name %>
-    <p>
-      <% for clip in act.clips %>
-        <%=h clip.adress %><br/>
+<table>
+  <tbody>
+    <% for act in @performance.acts %>
+      <% if act.clips.size >= 1 %>
+        <% video = 1 %>
+        <tr>
+          <td class="grid_1 omega">
+            <h3 class="grid_1"><%=h act.name %></h3>
+          </td>
+          <td class="grid_11">
+            <% for clip in act.clips %>
+              <a href="#filme" onClick="showClip('<%=h clip.adress %>');" class="button grid_1">
+                <p>Video <%= video %></p>
+              </a>
+              <% video += 1 %>
+            <% end %>
+          </td>
+        </tr>
       <% end %>
-    </p>
-    <%=h act.name %>
-    <p>
-      <% for paragraf in act.paragrafs %>
-        <%=h paragraf.body %><br/>
-      <% end %>
-    </p><br>
-   <% end %>
- </p><br>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_performance_path(@performance) %> |
-<%= link_to 'Back', performances_path %>
+<div class="grid_12">
+  <% for act in @performance.acts %>
+    <% if act.paragrafs.size >= 1 %>
+      <p><b><%=h act.name %></b> - 
+        <% for paragraf in act.paragrafs %>
+          <%=h paragraf.body %></p><p>
+        <% end %>
+      </p>
+    <% end %>
+  <% end %>
+</div>
+
+<section class="navigation grid_12">
+  <%= link_to 'Back', performances_path %>
+  <% if current_user %>
+     | <%= link_to 'Edit', edit_performance_path(@performance) %>
+  <% end %>  
+</section>

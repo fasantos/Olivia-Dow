@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OliviaDow</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.cycle.all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="intro" class="grid_12">
+    <%= audio_tag "BayerTheFairyDollcoda.mp3", autoplay: true, loop: true %>
+    <table>
+      <thead >
+        <tr>
+          <td colspan="5">
+            <div id="centH" ><b><i>
+              <h1 class="textcenter">Olivia Dow</h1>
+              <h2 class="textcenter">School of Russian Ballet</h2>
+              <h3 class="textcenter">The finest coaching tradition in</h3>
+              <h3 class="textcenter">Russian Classical Ballet – Legat System in Malta</h3></b></i>
+            </div>
+            <p class="textcenter alternative_a"><%= link_to "Go to site", "/welcome/index" %></p>            
+          </td>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="level1">
+          <td>
+            <%= video_tag "video6.mp4" %>
+          </td>
+          <td></td>
+          <td>
+            <%= video_tag "video4.mp4" %>
+          </td>
+          <td></td>
+          <td>
+            <%= video_tag "video7.mp4" %>
+          </td>
+        </tr>
+         <tr class="level2">
+          <td></td>
+          <td>
+            <%= video_tag "video2.mp4" %>
+          </td>
+          <td></td>
+          <td>
+            <%= video_tag "video3.mp4" %>  
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5">
+            <p class="textcenter">Music by Josef Bayer (excerpt from The Fairy Doll Pas de Trois)</p>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

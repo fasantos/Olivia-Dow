@@ -2,28 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@charset "utf-8";
-/* CSS Document */
+@import "base";
 
 .blogpost{
-	position: relative;
-	border-radius: 11px;
-	width: 681px;
-	padding: 5px;
-	margin: 20px;
-	background: linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
-	background: -webkit-linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
-	background: -o-linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
-	background: -moz-linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8));
-}
+    border-radius: 11px;
+    @include background(linear-gradient(left, rgba(157, 193, 236,.4), rgba(227, 243, 246,.8)));
 
-.artbody{
-	//display: none; //waiting for javascript
-}
+    header{
+        margin: 10px;
+    }
 
+    .artbody{
+        margin: 10px;
+        text-align: justify;
+        text-justify: inter-word;
+        
+        .arttxt{
+            $width-and-count: 20px 2;
+            @include columns($width-and-count);
 
-.artbody.active{
-	display: block;
+            img{
+                width: 335px;
+                height: 343px;
+                margin: 4px;
+                box-shadow: 0px 0px 10px rgba(0,0,0, .5);
+                border: 1px solid  rgb(157, 193, 236);
+            }
+        }
+
+        hr{
+            background: rgb(46, 108, 186);
+            margin: 10px;
+        }
+
+        #comments{
+
+            div:nth-child(2n+1){
+                background:rgba(157, 193, 236,.4);
+                border: 1px solid  rgb(46, 108, 186);
+                border-radius: 11px;
+            }
+
+            header{
+                margin: 0px;
+            }
+
+            p, a{
+                margin: 10px;
+            }
+        }
+    }
+
 }
 
 .asar{
@@ -33,3 +62,4 @@
 .abNews:hover{
 	cursor: pointer;
 }
+

@@ -1,0 +1,23 @@
+<div class="grid_12">
+  <p id="notice"><%= notice %></p>
+
+  <p class="grid_4 beta omega">
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </p>
+
+  <p class="grid_4 beta omega gama">
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p class="grid_4 beta omega gama">
+    <strong>Password:</strong>
+    <%= @user.password %>
+  </p>
+  
+  <div class="navigation grid_12">
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %>
+  </div>
+</div>

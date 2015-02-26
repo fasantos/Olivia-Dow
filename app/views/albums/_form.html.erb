@@ -1,31 +1,30 @@
-<%= form_for(@album) do |f| %>
-  <% if @album.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
+<div class="grid_12">
+  <%= form_for(@album) do |f| %>
+    <% if @album.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
 
-      <ul>
-      <% @album.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @album.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+  <div class="fields">
+    <%= f.fields_for :images do |fi| %>
+       <%= render "images/image_fields", :f => fi %><br>
+    <% end %>
+    <%= link_to_add_fields "Add image", f, :images %><br>
+  </div><br>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :poster %><br>
-    <%= f.text_field :poster %>
-  </div>
-<div class="fields">
-  <%= f.fields_for :images do |fi| %>
-     <%= render "images/image_fields", :f => fi %>
-  <% end %>
-  <%= link_to_add_fields "Add photo", f, :images %><br>
 </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+

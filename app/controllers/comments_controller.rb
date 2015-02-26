@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :require_user, only: [:edit, :update, :destroy]
   before_action :get_article
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
@@ -27,12 +28,22 @@ class CommentsController < ApplicationController
     if @article
       @comment = @article.comments.new(comment_params)
       respond_to do |format|
-        if @comment.save
-          format.html { redirect_to @article, notice: 'Comment was successfully created.' }
-          format.json { render json: [@article, @comment], status: :created, location: [@article, @comment] }
+        if comment_params[:nickname].blank?
+          if @comment.save
+            for comment in @article.comments do
+              if comment != @comment
+                ContactsMailer.comment_response(comment, @comment, @article).deliver
+              end
+            end
+            format.html { redirect_to @article, notice: 'Comment was successfully created.' }
+            format.json { render json: [@article, @comment], status: :created, location: [@article, @comment] }
+          else
+            format.html { redirect_to @article }
+            format.json { render json: @comment.errors, status: :unprocessable_entity }
+          end
         else
-          format.html { render :new }
-          format.json { render json: @comment.errors, status: :unprocessable_entity }
+            format.html { redirect_to @article }
+            format.json { render json: @comment.errors, status: :unprocessable_entity }
         end
       end
     else
@@ -78,6 +89,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:author, :email, :body, :article_id)
+      params.require(:comment).permit(:author, :email, :body, :article_id, :nickname)
     end
 end

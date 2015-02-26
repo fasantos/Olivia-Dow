@@ -1,40 +1,41 @@
 
-
-<div id="content">
-  <h1>Listing staffs</h1>
   <table id="admintabel">
-
     <tbody>
       <% @staffs.each do |staff| %>
         <tr>
-          <td class="ce">
+          <td>
               <% for image in staff.images %>
-                <%= render "/images/image", :locals => { :id => image.id }  %><br/>
+                <%= render "/images/image", :locals => { :id => image.id }  %>
               <% end %>
           </td>
-          <td class="cd">
+          <td>
             <p>
               <b><%= staff.name %></b>, 
               <% for paragraf in staff.paragrafs %>
               <%=h paragraf.body %><br/>
               <% end %>
-            </p><br>
-          </td>
-        </tr>
-        <tr>
-          <td class="ce">
-            <%= link_to 'Show', staff %> | 
-            <%= link_to 'Edit', edit_staff_path(staff) %> | 
-            <%= link_to 'Destroy', staff, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-          <td class="cd">
+            </p>
+            <% if current_user %>
+              <section class="navigation">
+                <%= link_to 'Show', staff %> | 
+                <%= link_to 'Edit', edit_staff_path(staff) %> | 
+                <%= link_to 'Destroy', staff, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </section>          
+            <% end %>
           </td>
         </tr>
       <% end %>
     </tbody>
+    <% if current_user %>
+      <tfoot>
+        <tr>
+          <th></th>
+          <th>
+            <section class="navigation">
+              <%= link_to 'New Staff', new_staff_path %>
+            </section>
+          </th>
+        </tr>
+      </tfoot>
+    <% end %>
   </table>
-
-  <%= link_to 'New Staff', new_staff_path %>
-
-  <br>
-</div>

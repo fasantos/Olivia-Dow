@@ -1,0 +1,7 @@
+<header class="abNews">
+  <h3><%= @article.title %></h3>
+  <p class="sig">Posted <%= time_ago_in_words(@article.created_at)  %> ago by 
+    <b><%= @article.author %></b> - 
+    <a href="#comments"><%= @article.comments.size %> comments</a>
+  </p>
+</header>

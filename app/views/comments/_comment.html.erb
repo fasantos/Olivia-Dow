@@ -1,14 +1,11 @@
-<section id="comments">
+<%= div_for comment do %>
   <header>
-    <h3>Comments</h3>
+    <p>
+      <b><%= comment.author  %></b> commented <%= time_ago_in_words(comment.created_at) %> ago
+    </p>
   </header>
-  <%= div_for comment do %>
-    <header>
-      <p class="sig">
-        <a href="#"><%= comment.author  %></a>  on <%= comment.created_at  %>
-      </p>
-    </header>
-    <p><%= h(comment.body) %></p>
+  <p><%= h(comment.body) %></p>
+  <% if current_user %>
     <%= link_to 'Destroy', [@article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
-</section>
+<% end %>

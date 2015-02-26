@@ -1,0 +1,57 @@
+<%= render "contacts/contact" %>
+
+<fieldset class="contact-field prefix_1 grid_11">
+  <legend><h3>Leave us a message</h3></legend>
+  <div class="grid_10 beta omega">
+    <%= form_for @contact do |f| %>
+      <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this request from being sent:</h2>
+
+          <ul>
+          <% @contact.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="prefix_3 grid_2 alpha omega">
+        <p>
+          <%= f.label :name %>:
+        </p>
+        <div class="actions container grid_2">
+        </div>
+        <p>
+          <%= f.label :email %>:
+        </p>
+        <div class="actions container grid_2">
+        </div>
+        <p>
+          <%= f.label :message %>:
+        </p>
+      </div>
+
+      <div class="grid_5 alpha beta gama omega">
+        <p>
+          <%= f.text_field :name, cols: "40", placeholder: "Required", class: "grid_5 alpha beta omega"  %>
+        </p>
+        <div class="container grid_4 gama">
+        </div>
+        <p>
+          <%= f.text_field :email, cols: "40", placeholder: "Required", class: "grid_5 alpha beta omega" %>
+        </p>
+        <div class="container grid_4 alfa">
+        </div>
+        <p>
+          <%= f.text_area :message, cols: "40", rows: "5", placeholder: "Leave your comment here...", class: "grid_5 alpha beta omega" %>
+        </p>
+      </div>
+      <div class="prefix_3 grid_2 alpha omega"><%= f.text_field :nickname, :hint => 'Leave this field blank!', :class => 'hidden' %></div>
+      <div class="actions grid_5 alpha beta gama omega">
+        <%= f.submit 'Send message', class: "grid_2 beta omega" %>
+      </div>
+    <% end %>
+    
+  </div>  
+</fieldset>
+                            

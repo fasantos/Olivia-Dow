@@ -1,27 +1,26 @@
-<h1>Listing performances</h1>
+<% @performances.each do |performance| %>
+  <div class="grid_4">
+    <div class="media-menu">
+        <a href="/performances/<%= performance.id %>">
+          <% for image in performance.images %>
+            <%= render "/images/image", :locals => { :id => image.id }  %>
+          <% end %>
+          <span><%= performance.title %></span>
+        </a>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Poster</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @performances.each do |performance| %>
-      <tr>
-        <td><%= performance.title %></td>
-        <td><%= performance.poster %></td>
-        <td><%= link_to 'Show', performance %></td>
-        <td><%= link_to 'Edit', edit_performance_path(performance) %></td>
-        <td><%= link_to 'Destroy', performance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% if current_user %>
+      <section class="navigation">
+        <%= link_to 'Show', performance %>
+        | <%= link_to 'Edit', edit_performance_path(performance) %> | 
+        <%= link_to 'Destroy', performance, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </section>
     <% end %>
-  </tbody>
-</table>
+  </div>
+<% end %>
 
-<br>
-
-<%= link_to 'New Performance', new_performance_path %>
+<% if current_user %>
+  <section class="navigation grid_12">
+    <%= link_to 'New Performance', new_performance_path %>    
+  </section>
+<% end %>

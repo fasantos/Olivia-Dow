@@ -6,7 +6,11 @@ gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass'
+gem 'sass-rails'
+# Use compass for scss
+gem 'compass'
+gem 'compass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -38,3 +42,12 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Use Authlogic for authentication
+gem 'authlogic', '~> 3.4.4'
+
+# Mail forms
+gem 'mail_form', '~>1.5.0.rc'
+gem 'simple_form', '~>3.0.0.rc'
+
+# Puma Server
+gem 'puma'

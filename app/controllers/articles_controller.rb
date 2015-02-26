@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :require_user, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
@@ -21,7 +22,9 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    @article.paragrafs.build
+    if @performance.images.size < 1
+      @performance.images.build
+    end
   end
 
   # POST /articles
@@ -72,6 +75,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :author, :email, images_attributes: [:id, :image_file, :_destroy], paragrafs_attributes: [:id, :body, :_destroy])
+      params.require(:article).permit(:title, :author, :email, :created_at, images_attributes: [:id, :image_file, :_destroy], paragrafs_attributes: [:id, :body, :_destroy])
     end
 end

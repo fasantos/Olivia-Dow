@@ -1,12 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @album.title %>
-</p>
-<% for image in @album.images %>
-  <%= render "/images/image", :locals => { :id => image.id }  %><br/>
-<% end %>
-
-<%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
+<div class="backgroundsize">
+  <div class="background" onClick="closeAlbum()">
+    <div class="box">
+      <div class="left"><%= image_tag "photoSliderLeftButton.png", class: "icon" %></div>
+      <a href="<%= albums_path %>" class="close"><%= image_tag "close-button.png", class: "icon" %></a>
+      <div class="right"><%= image_tag "photoSliderRightButton.png", class: "icon" %></div>
+      <section class="slides">
+        <ul>
+          <% for image in @album.images %>
+            <li class="photo"><%= render "/images/image", :locals => { :id => image.id }  %></li>
+          <% end %>
+        </ul>
+      </section>
+      <section class="navigation grid_12">
+      <% if current_user %>
+       | <%= link_to 'Edit', edit_album_path(@album) %>
+      <% end %>  
+    </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<% album = locals[:album] %>
+<div class="grid_4">
+    <a href="/albums/<%= album.id %>" class="media-menu">
+      <%= image_tag("/images/code_image/#{album.images.first.id}", :alt => "Image") %>
+      <span><%= album.title %></span>
+    </a>
+    <% if current_user %>
+      <section class="navigation">
+        <%= link_to 'Show', album %> | <%= link_to 'Edit', edit_album_path(album) %> | 
+        <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>      
+      </section>
+    <% end %>
+  </div>
