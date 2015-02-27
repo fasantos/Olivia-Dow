@@ -97,6 +97,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.6)
       sprockets-rails (~> 2.0)
+    rails_serve_static_assets (0.0.4)
     railties (4.1.6)
       actionpack (= 4.1.6)
       activesupport (= 4.1.6)
@@ -160,6 +161,7 @@ DEPENDENCIES
   pg
   puma
   rails (= 4.1.6)
+  rails_serve_static_assets
   sass
   sass-rails
   sdoc (~> 0.4.0)

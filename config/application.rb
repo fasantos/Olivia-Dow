@@ -37,6 +37,8 @@ module OliviaDowV1
     config.action_mailer.default_url_options = {
       :host => "gmail.com"
     }
+    
+    config.serve_static_assets = true
 
   end
 end

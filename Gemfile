@@ -51,3 +51,6 @@ gem 'simple_form', '~>3.0.0.rc'
 
 # Puma Server
 gem 'puma'
+
+# Enables rails server to deliver your assets instead of returning a 404 on heroku
+gem 'rails_serve_static_assets'
