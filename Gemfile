@@ -54,3 +54,6 @@ gem 'puma'
 
 # Enables rails server to deliver your assets instead of returning a 404 on heroku
 gem 'rails_serve_static_assets'
+
+#Use to enable all platform features
+gem 'rails_12factor'
