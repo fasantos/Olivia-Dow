@@ -1,0 +1,12 @@
+<div class="fields">
+  <%= f.label :name, "Act Name(ie: Act I or Act II, etc...):" %><br>
+  <%= f.text_field :name %><%= link_to_remove_fields "Remove act", f %><br><br>
+  <%= f.fields_for :clips do |fc| %>
+    <%= render "clips/clip_fields", :f => fc %>
+  <% end %>
+  <%= link_to_add_fields "Add clip", f, :clips %><br><br>
+  <%= f.fields_for :paragrafs  do |fp| %>
+    <%= render "paragrafs/paragraf_fields", :f => fp %>
+  <% end %>
+  <%= link_to_add_fields "Add paragraf", f, :paragrafs %><br><br>    
+</div>

@@ -1,0 +1,4 @@
+<div class="p_fields">
+  <%= f.label :image %><br>
+  <%= f.text_field :data %>
+</div>

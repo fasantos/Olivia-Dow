@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <%= render :partial => @staff.images %>
+</p>
+
+<p>
+   <%= @staff.name %>
+   <%= render :partial => @staff.paragrafs %>
+</p>
+
+<%= link_to 'Edit', edit_staff_path(@staff) %> |
+<%= link_to 'Back', staffs_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @article.author %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @article.email %>
+</p>
+
+<p>
+  <%= render :partial => @article.images %>
+</p>
+
+<p>
+  <%= render :partial => @article.paragrafs %>
+</p>
+
+<h2>Comments</h2>
+<div id="comments">
+  <%= render :partial => @article.comments.reverse %>
+</div>
+
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

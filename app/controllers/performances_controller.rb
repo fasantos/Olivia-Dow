@@ -1,4 +1,5 @@
 class PerformancesController < ApplicationController
+  before_filter :require_user, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_performance, only: [:show, :edit, :update, :destroy]
 
   # GET /performances
@@ -15,10 +16,17 @@ class PerformancesController < ApplicationController
   # GET /performances/new
   def new
     @performance = Performance.new
+    @performance.images.build
+    #@act = @performance.acts.build
+    #@act.clips.build
+    #@act.paragrafs.build    
   end
 
   # GET /performances/1/edit
   def edit
+    if @performance.images.size < 1
+      @performance.images.build
+    end
   end
 
   # POST /performances
@@ -65,10 +73,11 @@ class PerformancesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_performance
       @performance = Performance.find(params[:id])
+      @number = 2
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def performance_params
-      params.require(:performance).permit(:title, :poster)
+      params.require(:performance).permit(:title, :poster, images_attributes: [:id, :image_file, :_destroy], acts_attributes: [:id, :name, :_destroy, clips_attributes: [:id, :adress, :_destroy], paragrafs_attributes: [:id, :body, :_destroy]])
     end
 end

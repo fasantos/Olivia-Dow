@@ -1,0 +1,2 @@
+class Paragraf < ActiveRecord::Base
+end
