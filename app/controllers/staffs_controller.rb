@@ -22,8 +22,8 @@ class StaffsController < ApplicationController
 
   # GET /staffs/1/edit
   def edit
-    if @performance.images.size < 1
-      @performance.images.build
+    if @staff.images.size < 1
+      @staff.images.build
     end
   end
 

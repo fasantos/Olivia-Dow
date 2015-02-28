@@ -22,8 +22,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    if @performance.images.size < 1
-      @performance.images.build
+    if @articles.images.size < 1
+      @articles.images.build
     end
   end
 
