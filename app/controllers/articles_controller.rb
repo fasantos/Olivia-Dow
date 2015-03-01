@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.order('created_at DESC')
   end
 
   # GET /articles/1
@@ -22,9 +22,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    if @articles.images.size < 1
-      @articles.images.build
-    end
+    
   end
 
   # POST /articles
