@@ -5,7 +5,7 @@ class StaffsController < ApplicationController
   # GET /staffs
   # GET /staffs.json
   def index
-    @staffs = Staff.all
+    @staffs = Staff.all.order('created_at DESC')
   end
 
   # GET /staffs/1
@@ -22,7 +22,7 @@ class StaffsController < ApplicationController
 
   # GET /staffs/1/edit
   def edit
-    if @staff.images.size < 1
+    if @staff.images.empty?
       @staff.images.build
     end
   end

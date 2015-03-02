@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @albums = Album.all.order('created_at DESC')
   end
 
   # GET /albums/1
@@ -21,6 +21,9 @@ class AlbumsController < ApplicationController
 
   # GET /albums/1/edit
   def edit
+    if @album.images.empty?
+      @album.images.build
+    end
   end
 
   # POST /albums

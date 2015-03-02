@@ -22,23 +22,6 @@ Rails.application.routes.draw do
 
   resources :users
   
-#  resources :clips
-
-#  resources :acts
-
-#  resources :comments
-
-#  resources :paragrafs
-
-#  resources :images
-
-#  resources :albums
-
-#  resources :performances
-
-#  resources :articles
-
-#  resources :staffs
 
 get 'images/code_image/:id' => 'images#code_image'
 
@@ -63,6 +46,24 @@ get 'images/code_image/:id' => 'images#code_image'
     resources :paragrafs
     resources :images
   end
+  
+  #  resources :clips
+
+#  resources :acts
+
+#  resources :comments
+
+#  resources :paragrafs
+
+#  resources :images
+
+#  resources :albums
+
+#  resources :performances
+
+#  resources :articles
+
+#  resources :staffs
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

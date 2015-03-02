@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_filter :require_user, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+   
 
   # GET /articles
   # GET /articles.json
@@ -22,7 +23,9 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    
+    if @article.images.empty?
+      @article.images.build
+    end
   end
 
   # POST /articles

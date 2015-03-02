@@ -5,7 +5,7 @@ class PerformancesController < ApplicationController
   # GET /performances
   # GET /performances.json
   def index
-    @performances = Performance.all
+    @performances = Performance.all.order('created_at DESC')
   end
 
   # GET /performances/1
@@ -24,7 +24,7 @@ class PerformancesController < ApplicationController
 
   # GET /performances/1/edit
   def edit
-    if @performance.images.size < 1
+    if @performance.images.empty?
       @performance.images.build
     end
   end
