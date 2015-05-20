@@ -1,4 +1,4 @@
 # app/models/user_session.rb
 class UserSession < Authlogic::Session::Base
-  # configuration here, see documentation for sub modules of Authlogic::Session
+  logout_on_timeout true   
 end

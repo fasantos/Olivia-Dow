@@ -1,4 +1,15 @@
 <% if current_user %>
+  <h3 class="grid_12">Instructions</h3>
+  <p class="grid_12">
+    The main album (the one that appears in front page, for announcements) the photos/posters should to be in landscape format (16:9).
+  </p>
+  <p class="grid_12">
+    For the other albums the first photo should to be in portrait format (3:4) because it will appear in the menu, for the others
+    there are no format restrictions but the photos shouldn't have more than 1000px height.
+  </p>
+<% end %>
+
+<% if current_user %>
   <% album = Album.first %>
   <%= render "album", :locals => { :album => album } %>
 <% end %>
