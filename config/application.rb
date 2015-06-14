@@ -25,17 +25,17 @@ module OliviaDowV1
       #:domain => "oliviadow.com"
 
 
-      :address => 'smtp.gmail.com',
+      :address => 'mail.webhero.com',
       :port => 587,
-      :domain => 'gmail.com',
-      :user_name => 'filomenosantos@gmail.com',
-      :password => 'Fas13893!',
+      :domain => 'oliviadow.net',
+      :user_name => 'info@oliviadow.net',
+      :password => 'oliviad345',
       :authentication => :plain,
       :enable_starttls_auto => true
     }
 
     config.action_mailer.default_url_options = {
-      :host => "gmail.com"
+      :host => "mail.webhero.com"
     }
     
     config.serve_static_assets = true

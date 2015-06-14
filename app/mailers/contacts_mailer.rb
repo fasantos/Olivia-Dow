@@ -27,6 +27,6 @@ class ContactsMailer < ActionMailer::Base
     @message = contact.message
     @email = contact.email
 
-    mail to: "filomenosantos@gmail.com", from: "#{@email}", subject: "#{contact.name}(#{@email}) requested information."
+    mail to: "filomenosantos@gmail.com", from: "#{@email}", subject: "#{contact.name} (#{@email}) requested information."
   end
 end
