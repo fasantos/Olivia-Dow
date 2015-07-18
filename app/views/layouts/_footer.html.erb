@@ -1,50 +1,33 @@
-<footer>
-                <div>
-                    <div class="grid_4">
-                        <h3>About:</h3>
-                        <p>© Copyright 2014 Olivia Dow School of Russian Ballet. All Rights Reserved by the <%= link_to "Terms of Use", aboutus_cprights_path %> and  <%= link_to "Privacy Policy", aboutus_cprights_path %> to Olivia Dow School of Russian Ballet and the author concerned ©.</p>
-                    </div>
-                    <div class="grid_4">
-                      <h3>Restricted area:</h3>
-                        <% if current_user %>
-                              <h3>
-                                  <%= link_to "Edit Profile", edit_user_path(:current), class:"upfoot" %> | 
-                                  <%= link_to "Logout", logout_path, class:"upfoot" %>
-                              </h3>
-                            <% else %>
-                              <%= render 'user_sessions/form' %>
-                            <% end %>
-                        
-                    </div>
-                    <div class="grid_4">
-                        <h3>Accredited member of:</h3>
-                        <p>
-                          <%= image_tag "rbslogo.jpg", class: "icon" %> 
-                          <a href="http://www.russianballetsociety.co.uk/" target="_blank">Russian Ballet Society</a>
-                        </p>
-                        <p>
-                                    <%= image_tag "cid-logo.jpg", class: "icon" %> 
-                                    <a href="http://www.cid-portal.org/" target="_blank">International Dance Council</a>  
-                        </p>
-                        <p>
-                                    <%= image_tag "cdetlogo.jpg", class: "icon" %> 
-                                    <a href="http://www.cdet.org.uk/" target="_blank">Council for Dance Education and Training</a>
-                        </p>
-                        <p>
-                                    <%= image_tag "rocklogo.jpg", class: "icon" %> 
-                                    <a href="http://www.rockschool.co.uk/" target="_blank">Rockschool</a>
-                        </p>
-                        <p>
-                                    <%= image_tag "ofquallogo.jpg", class: "icon" %>
-                                    <a href="http://ofqual.gov.uk/" target="_blank">Ofqual</a>
-                        </p>
-                    </div>
-                </div>
-                <div id="lowfoot" >
-                    <p>Powered by Filomeno Santos - 2014 <br/>
-                        <a href="https://www.facebook.com/filomeno.santos" target="_blank">Facebook</a> | 
-                        <a href="https://www.linkedin.com/profile/view?id=72703864&trk=nav_responsive_tab_profile" target="_Blank">LinkedIn</a>         
-                    </p>
-                </div>
-            </footer>
+    <footer>
+        <div>
+            <div class="grid_4">
+                <h3>About:</h3>
+                <p>© Copyright 2014 Olivia Dow School of Russian Ballet. All Rights Reserved by the <%= link_to "Terms of Use", aboutus_cprights_path %> and  <%= link_to "Privacy Policy", aboutus_cprights_path %> to Olivia Dow School of Russian Ballet and the author concerned ©.</p>
+            </div>
+            <div class="grid_4">
+              <h3>Restricted area:</h3>
+                <% if current_user %>
+                  <h3>
+                      <%= link_to "Edit Profile", edit_user_path(:current), class:"upfoot" %> | 
+                      <%= link_to "Logout", logout_path, class:"upfoot" %>
+                  </h3>
+                <% else %>
+                  <%= render 'user_sessions/form' %>
+                <% end %>                
+            </div>
+            <div class="grid_4">
+                <h3>Contacts:</h3>
+                <p>Olivia Dow School of Russian Ballet</p>
+                <p>106, Leli Falzon Street, Naxxar, NXR2609 Malta. Mobile: 9947 4127.</p>
+                <p>Tel: 2158 3368, 2141 9725.</p>
+                <p>email: <a href="mailto: info@oliviadow.net" class="dark_a" >info@oliviadow.net</a></p>
+            </div>
         </div>
+        <div id="lowfoot" >
+            <p>Powered by Filomeno Santos - 2014 <br/>
+                <a href="https://www.facebook.com/filomeno.santos" target="_blank">Facebook</a> | 
+                <a href="https://www.linkedin.com/profile/view?id=72703864&trk=nav_responsive_tab_profile" target="_Blank">LinkedIn</a>         
+            </p>
+        </div>
+    </footer>
+</div>
