@@ -1,0 +1,17 @@
+<% @article = locals[:article] %>
+<article class="blogpost gridten_9 beta gama">
+	<header class="abNews">
+	  <h3><%= @article.title %></h3>
+	  <p class="sig">Posted <%= time_ago_in_words(@article.created_at)  %> ago by 
+	    <b><%= @article.author %></b> - 
+	    <a href="#comments"><%= @article.comments.size %> comments</a>
+	  </p>
+	</header>
+	<section class="navigation">
+        <%= link_to 'Show', @article %>
+        <% if current_user %>
+           | <%= link_to 'Edit', edit_article_path(@article) %> | 
+          <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+    </section>
+</article>

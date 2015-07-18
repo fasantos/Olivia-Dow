@@ -10,8 +10,25 @@
       </div>
     <% end %>
   </section>
+
+  <article class="blogpost gridten_9 beta">
+    <header class="abNews">
+      <h3>Welcome to our new and improved website!</h3>
+    </header>
+    <div class="artbody">
+      <div class="arttxt">
+        <p>If you have never heard of us, The Olivia Dow School of Russian Ballet provides <%= link_to "ballet training", aboutus_path %> in Malta for anyone who is thirsty for it!  Boys and girls from the age of 3 are invited to come and experience a ballet lesson or two (or three if you’re not quite convinced) for FREE before committing to attending two lessons a week.  (SSSHHH! Boys train for free!)</p>
+        <p>The Olivia Dow School of Russian Ballet is the only <%= link_to "dance school in Malta", aboutus_premises_path %> which provides ballet lessons under The Legat System  – a Russian ballet training style begun by <%= link_to "Legat", aboutus_history_path %> , a man with a big heart, a passion for the art of performing as well as investing in the future of the art of ballet.  If you have no idea who or what we are talking about, read up about him and the ballet system which he created in our <%= link_to "History", aboutus_history_path %> tab.  If you want to know even more about the principles of the syllabus which this ballet school follows and passes on to its students, various books have been published and are referred to in our <%= link_to "Books", aboutus_books_path %> tab.</p>
+        <p>Olivia Dow’s ballet school is based in <a href="/contacts/new#map">Naxxar</a>, with ballet lessons occurring in two studios just a few blocks away from each other. <a href="/aboutus/premises#2008">One of the ballet studios</a> is equipped with a dance carpet in order to provide a safe environment for young ballerinas to begin pointe work.  This ballet school has been highly criticised for putting dancers en pointe at too young an age.  Our young excited ballerinas however are only allowed to do so under strictly controlled supervision.  During early pointe work sessions the ballet pupils cling on to a barre and simply perform exercises to strengthen their ankles and insteps.  The Legat System includes pointe work at Grade 4 level and only allows ballet students to sit for it if they are physically and mentally prepared for it.</p>
+        <p>Please feel free to randomly browse through our articles in our <%= link_to "News", articles_path %> tab as well as our Videos and <%= link_to "Photos", albums_path %> which might stir up some nostalgia in those who have been a part of the wonderful experiences that have been captured in writing or in images.  On the other hand, newcomers to the ‘Olivia Dow’ experience may flit through these articles which provide snippets of the context to the school’s history, one that is firmly based in providing ‘the performing experience’ for any dancer from the tender age of 3 years old.  By ‘performing’, we don’t mean our teacher stands on the side of the stage and the kiddies simply copy … we mean that the young danseur or danseuse stands on that stage beaming with pride as they dance to their hearts content (and waves to mummy when they get the chance!)</p>
+        <p>Olivia’s ballet year starts at the beginning of September and finishes at the end of June.  During the month of July the young budding stars of the school prepare for their much awaited <%= link_to "performance", performances_path %> , the highlight of the year!  Performing on a stage allows the dancers’ confidence to build and allows them to be aware of the importance of performing, something they must carry as a responsibility in their ballet classes.  The ballet students are encouraged to take part in this performance and fill the stage with their presence and their smile!  During rehearsals the students also experience working as a team whilst finding the strengths of their own individuality, and, of course they realise the importance of rehearsing itself … the determination it takes to push themselves beyond their expectations.</p>
+        <p>For more information please <%= link_to "Contact Us", new_contact_path %> and feel free to comment on anything as feedback is much appreciated!</p>
+      </div>
+    </div>
+  </article>
+
   <h3 class="gridten_9 beta gama">Latest News:</h3>
-  <%= render :partial => @article = Article.last %>  
+  <%= render 'articles/header_last', :locals => { :article => Article.last } %>  
 </div>
 
 <%=render "layouts/aside"%>

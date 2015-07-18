@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'aboutus/archive' => 'static_pages#archive'
 
+  get 'aboutus' => 'static_pages#aboutus'
+
   get 'welcome/index'
 
   get '/login' => 'user_sessions#new', as: 'login'

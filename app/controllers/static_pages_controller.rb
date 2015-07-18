@@ -17,4 +17,7 @@ class StaticPagesController < ApplicationController
   
   def cprights
   end
+
+  def aboutus
+  end
 end
