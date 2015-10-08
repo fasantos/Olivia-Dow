@@ -26,7 +26,7 @@ module OliviaDowV1
 
 
       :address => 'mail.oliviadow.com',
-      :port => 25,
+      :port => 465,
       :domain => 'oliviadow.com',
       :user_name => 'info@oliviadow.com',
       :password => 'ballet123',
