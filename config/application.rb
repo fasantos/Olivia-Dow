@@ -25,11 +25,11 @@ module OliviaDowV1
       #:domain => "oliviadow.com"
 
 
-      :address => 'mail.webhero.com',
-      :port => 587,
-      :domain => 'oliviadow.net',
-      :user_name => 'info@oliviadow.net',
-      :password => 'oliviad345',
+      :address => 'mail.oliviadow.com',
+      :port => 465,
+      :domain => 'oliviadow.com',
+      :user_name => 'info@oliviadow.com',
+      :password => 'ballet123',
       :authentication => :plain,
       :enable_starttls_auto => true
     }
