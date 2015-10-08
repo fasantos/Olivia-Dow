@@ -1,5 +1,5 @@
 class ContactsMailer < ActionMailer::Base
-  default from: "info@oliviadow.net"
+  default from: "info@oliviadow.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -27,6 +27,6 @@ class ContactsMailer < ActionMailer::Base
     @message = contact.message
     @email = contact.email
 
-    mail to: "info@oliviadow.net", from: "info@oliviadow.net", subject: "#{contact.name} (#{@email}) requested information."
+    mail to: "info@oliviadow.com", from: "info@oliviadow.com", subject: "#{contact.name} (#{@email}) requested information."
   end
 end
